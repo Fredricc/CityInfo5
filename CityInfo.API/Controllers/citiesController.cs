@@ -3,9 +3,10 @@
 namespace CityInfo.API.Controllers
 {
         [ApiController]
-        [Route("[controller]")]
+        [Route("api/cities")]
     public class citiesController : ControllerBase
     {
+        [HttpGet]
         public JsonResult GetCities()
         {
             return new JsonResult(
@@ -18,3 +19,4 @@ namespace CityInfo.API.Controllers
         }
     }
 }
+
