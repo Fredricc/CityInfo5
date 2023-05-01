@@ -2,13 +2,19 @@
 
 namespace CityInfo.API.Controllers
 {
+        [ApiController]
+        [Route("[controller]")]
     public class citiesController : ControllerBase
     {
-        //[ApiController]
-        [Route("[controller]")]
-        //public IActionResult Index()
+        public JsonResult GetCities()
         {
-            //return View();
+            return new JsonResult(
+                new List<object>
+                {
+                    new {id =1, Name = "New york city"},
+                    new {id =2, Name = "Kisumu"}
+                }); 
+            
         }
     }
 }
