@@ -64,8 +64,8 @@ namespace CityInfo.API
                         new PointOfInterestDto()
                         {
                             Id = 5,
-                            Name = "Eiffel Tower",
-                            Description = "A wrought iron lattice tower on the middle of Manhattan."
+                            Name = "Kirigiti Stadium",
+                            Description = "Kenya's newest world class international stadium."
                         },
                         new PointOfInterestDto()
                         {
@@ -85,18 +85,19 @@ namespace CityInfo.API
                         new PointOfInterestDto()
                         {
                             Id = 7,
-                            Name = "Eiffel Tower",
-                            Description = "A wrought iron lattice tower on the middle of Manhattan."
+                            Name = "GTC",
+                            Description = "A 42 story building located in Westlands along the Waiyaki highway."
                         },
                         new PointOfInterestDto()
                         {
                             Id = 8,
-                            Name = "The Louvre",
-                            Description = "The world's largest museum."
+                            Name = "Fugo Gaucco",
+                            Description = "A Italian steak restaurant located in Westlands ."
                         }
 
                 }
-            } };
+            }
+            };
         }
     }
 }
