@@ -4,13 +4,13 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CityInfo.API.Controllers
 {
-        [ApiController]
-        [Route("api/cities")]
+    [ApiController]
+    [Route("api/cities")]
     public class citiesController : ControllerBase
     {
         private readonly ICityInfoRepository _cityInfoRepository;
 
-        public citiesController(ICityInfoRepository cityInfoRepository) 
+        public citiesController(ICityInfoRepository cityInfoRepository)
         {
             this._cityInfoRepository = cityInfoRepository ??
                 throw new ArgumentNullException(nameof(cityInfoRepository));
@@ -33,9 +33,9 @@ namespace CityInfo.API.Controllers
             }
 
             return Ok(results);
-           // return Ok(_citiesDataStore.Cities); 
-            
+            // return Ok(_citiesDataStore.Cities);
         }
+
         //[HttpGet("{id}")]
         //public ActionResult<CityDto> GetCity(int id)
         //{
@@ -49,4 +49,3 @@ namespace CityInfo.API.Controllers
         //}
     }
 }
-
