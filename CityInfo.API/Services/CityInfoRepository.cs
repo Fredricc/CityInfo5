@@ -17,12 +17,6 @@ namespace CityInfo.API.Services
         {
             return await _context.Cities.OrderBy(c =>c.Name).ToListAsync();
         }
-
-        //Task<IEnumerable<CityWithoutPointsOfInterest>> ICityInfoRepository.GetCitiesAsync()
-        //{
-        //    throw new NotImplementedException();
-        //}
-
         public async Task<City?> GetCityAsync(
             int cityId, bool includePointsOfInterest)
         {
