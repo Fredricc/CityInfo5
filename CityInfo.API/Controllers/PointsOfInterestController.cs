@@ -160,28 +160,31 @@ namespace CityInfo.API.Controllers
             return NoContent();
         }
 
-        // [HttpDelete("{pointofinterestid}")]
-        // public ActionResult DeletePointOfInterest(int cItyId,
-        //     int pointOfInterestId)
-        // {
-        //     var city = _citiesDataStore.Cities.FirstOrDefault(c => c.Id == cItyId);
-        //     if (city == null)
-        //     {
-        //         return NotFound();
-        //     }
-        //     var pointOfInterestFromStore = city.PointsOfInterest.FirstOrDefault(c => c.Id == pointOfInterestId);
-        //     if (pointOfInterestFromStore == null)
-        //     {
-        //         return NotFound();
-        //     }
+        [HttpDelete("{pointofinterestid}")]
+        public async  Task<ActionResult> DeletePointOfInterest(int cityId,
+            int pointOfInterestId)
+        {
 
-        //     city.PointsOfInterest.Remove(pointOfInterestFromStore);
-        //     _mailService.Send(
-        //         "Point of interest deleted.",
-        //         $"The Point of interest called {pointOfInterestFromStore.Name} with id {pointOfInterestFromStore.Id} was deleted.");
+            if (!await _cityInfoRepository.CityExistsAsync(cityId))
+            {
+                return NotFound();
+            }
+            var pointOfInterestEntity = await _cityInfoRepository
+                .GetPointOfInterestForCityAsync(cityId, pointOfInterestId);
+            if (pointOfInterestEntity == null)
+            {
+                return NotFound();
+            }
 
-        //     return NoContent();
-        // }
+            _cityInfoRepository.DeletePointOfInterest(pointOfInterestEntity);
+
+            _mailService.Send(
+                "Point of interest deleted.",
+                $"The Point of interest called {pointOfInterestEntity.Name} with" +
+                $" id {pointOfInterestEntity.Id} was deleted.");
+
+            return NoContent();
+        }
 
     }
 }
