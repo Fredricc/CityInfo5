@@ -65,6 +65,7 @@ namespace CityInfo.API.Controllers
                 return NotFound();
             }
 
+
             return Ok(_mapper.Map<PointOfInterestDto>(pointOfInterest));
         }
 
