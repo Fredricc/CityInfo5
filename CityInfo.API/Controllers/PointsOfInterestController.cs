@@ -72,6 +72,7 @@ namespace CityInfo.API.Controllers
         public async Task<ActionResult<PointOfInterestDto>> CreatePointOfInterest(
             int cityId,
             PointOfInterestForCreationDto pointOfInterest)
+
         {
             if (!await _cityInfoRepository.CityExistsAsync(cityId) )
             {
