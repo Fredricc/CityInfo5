@@ -21,7 +21,7 @@ namespace CityInfo.API.Services
         public async Task<IEnumerable<City>> GetCitiesAsync(string? name, string? searchQuery)
         {
             if (string.IsNullOrEmpty(name)
-                && string.IsNullOrWhiteSpace(searchQuery)
+                && string.IsNullOrWhiteSpace(searchQuery))
             {
                 return await GetCitiesAsync();
             }
@@ -38,8 +38,8 @@ namespace CityInfo.API.Services
             if(!string.IsNullOrWhiteSpace(searchQuery))
             {
                 searchQuery = searchQuery.Trim();
-                collection = collection.Where(a => a.Name == searchQuery)
-                    || (a.Description != null && a.Description.Contains( searchQuery));
+                collection = collection.Where(a => a.Name.Contains(searchQuery)
+                    || (a.Description != null && a.Description.Contains( searchQuery)));
             }
 
             return await collection.OrderBy(c => c.Name).ToListAsync();
