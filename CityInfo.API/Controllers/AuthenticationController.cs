@@ -18,7 +18,7 @@ namespace CityInfo.API.Controllers
 
         private class CityInfoUser
         {
-            
+
 
             public int UserId { get; set; }
             public string UserName { get; set; }
