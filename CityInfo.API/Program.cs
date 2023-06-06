@@ -80,45 +80,6 @@ builder.Services.AddApiVersioning( setupAction =>
     setupAction.ReportApiVersions = true;
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
