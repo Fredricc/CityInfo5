@@ -26,7 +26,14 @@ namespace CityInfo.API.Controllers
             this._mapper = mapper ??
                 throw new ArgumentNullException(nameof(mapper));
         }
-
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="searchQuery"></param>
+        /// <param name="pageNumber"></param>
+        /// <param name="pageSize"></param>
+        /// <returns></returns>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<CityWithoutPointsOfInterestDto>>> GetCities(
             string? name, string? searchQuery, int pageNumber = 1, int  pageSize = 10)
