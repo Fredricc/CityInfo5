@@ -6,7 +6,7 @@
     <members>
         <member name="M:CityInfo.API.Controllers.citiesController.GetCities(System.String,System.String,System.Int32,System.Int32)">
             <summary>
-            Get all Cities 
+            Get all Cities
             </summary>
             <param name="name">Allow searching by name</param>
             <param name="searchQuery">Allows filtering by Query</param>
