@@ -8,7 +8,7 @@ using System.Text.Json;
 namespace CityInfo.API.Controllers
 {
     [ApiController]
-    // [Authorize]
+    [Authorize]
     [ApiVersion("1.0")]
     [ApiVersion("2.0")]
     [Route("api/v{version:apiVersion}/cities")]
@@ -27,7 +27,7 @@ namespace CityInfo.API.Controllers
                 throw new ArgumentNullException(nameof(mapper));
         }
         /// <summary>
-        /// Get all Cities 
+        /// Get all Cities
         /// </summary>
         /// <param name="name">Allow searching by name</param>
         /// <param name="searchQuery">Allows filtering by Query</param>
