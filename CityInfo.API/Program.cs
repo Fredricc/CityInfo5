@@ -58,6 +58,7 @@ builder.Services.AddSwaggerGen( setupAction =>
         }
     });
 });
+
 builder.Services.AddSingleton<FileExtensionContentTypeProvider>();
 
 #if DEBUG
